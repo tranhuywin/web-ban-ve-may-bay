@@ -7,11 +7,12 @@ import {
 import Home from "./Components/Home";
 import Banve from "./Components/Ban-ve";
 import Muave from "./Components/Mua-ve";
-//import SeatNumber from "./Components/Components-muave/SeatNumber"
 import Basic from "./Components/Components-muave/kindOfTicket/Basic";
 import Regular from "./Components/Components-muave/kindOfTicket/Regular";
 import Premium from "./Components/Components-muave/kindOfTicket/Premium";
 import Vip from "./Components/Components-muave/kindOfTicket/Vip";
+import FillInformation from "./Components/Components-banve/FillInformation"
+
 export class RouterApp extends Component {
   render() {
     return (
@@ -37,6 +38,9 @@ export class RouterApp extends Component {
           </Route>
           <Route path="/SeatNumber-vip">
             <Vip></Vip>
+          </Route>
+          <Route path="/Fill-in-the-information">
+          <FillInformation></FillInformation>
           </Route>
         </Switch>
       </div>

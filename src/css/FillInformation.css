@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Muli");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  background: #F5F8FB;
+  margin: 0;
+}
+
+.btn, .form-control, select {
+  font-family: "Muli", sans-serif;
+}
+
+.panel{
+  margin-top: 2rem !important;
+}
+.material-icons {
+  color: #B2B9BC;
+  vertical-align: bottom;
+}
+
+.btn {
+  font-weight: 900;
+}
+.row{
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.btn:not(.dropdown-toggle) {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.25px;
+}
+
+.row {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container {
+  max-width: 728px;
+}
+
+.custom-control {
+  position: relative ;
+  display: -webkit-inline-box ;
+  display: -webkit-inline-flex ;
+  display: -ms-inline-flexbox ;
+  display: inline-flex ;
+  min-height: 1.5rem ;
+  padding-left: 1.5rem ;
+  margin-right: 1rem ;
+  cursor: pointer;
+}
+
+.custom-radio .custom-control-indicator {
+  border-radius: 50%;
+}
+
+.custom-control-indicator {
+  position: absolute;
+  top: 0.25rem;
+  left: 0;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #ddd;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: 50% 50%;
+  background-size: 50% 50%;
+}
+
+/* Customize the label (the container) */
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  margin-right: 12px;
+  margin-left: 7px;
+  cursor: pointer;
+  /* font-size: 22px; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Create a custom checkbox */
+.custom-control-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 3px;
+}
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.custom-control-input:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* On mouse-over, add a grey background color */
+.custom-checkbox:hover input ~ .custom-control-input {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked ~ .custom-control-input {
+  background-color: #2196F3;
+}
+
+/* Show the custom-control-input when checked */
+.custom-checkbox input:checked ~ .custom-control-input:after {
+  display: block;
+}
+
+/* Style the custom-control-input/indicator */
+.custom-checkbox .custom-control-input:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
