@@ -1,38 +1,85 @@
 import React, { Component } from "react";
 import "../css/banve.scss";
 import $ from "jquery";
+import { NavLink } from "react-router-dom";
 
 export class Banve extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      adult: 1,
+      child: 1,
+      infant: 1,
+    };
+  }
   componentDidMount() {
     $(document).ready(function () {
-      var guestAmount = $("#guestNo");
-      
-      $("#cnt-up").click(function () {
-        guestAmount.val(Math.min(parseInt($("#guestNo").val()) + 1, 20));
+      //adult
+      var guestAmountAdult = $("#guestNo-adult");
+      $("#cnt-up-adult").click(function () {
+        guestAmountAdult.val(
+          Math.min(parseInt($("#guestNo-adult").val()) + 1, 20)
+        );
       });
-      $("#cnt-down").click(function () {
-        guestAmount.val(Math.max(parseInt($("#guestNo").val()) - 1, 1));
+      $("#cnt-down-adult").click(function () {
+        guestAmountAdult.val(
+          Math.max(parseInt($("#guestNo-adult").val()) - 1, 1)
+        );
       });
-
-      $(".btn").click(function () {
-        var $btn = $(".btn");
-
-        $btn.toggleClass("booked");
-        $(".diamond").toggleClass("windup");
-        $("form").slideToggle(300);
-        $(".linkbox").toggle(200);
-
-        if ($btn.text() === "BOOK NOW") {
-          $btn.text("BOOKED!");
-        } else {
-          $btn.text("BOOK NOW");
-        }
+      //child
+      var guestAmountChild = $("#guestNo-child");
+      $("#cnt-up-child").click(function () {
+        guestAmountChild.val(
+          Math.min(parseInt($("#guestNo-child").val()) + 1, 20)
+        );
       });
-      $("#checkboxRDay").click(function(){
-        //$("#ReturnDay").toggle;
-        console.log( $("#ReturnDay").toggle("disabled"));
-      })
+      $("#cnt-down-child").click(function () {
+        guestAmountChild.val(
+          Math.max(parseInt($("#guestNo-child").val()) - 1, 0)
+        );
+      });
+      //infant
+      var guestAmountInfant = $("#guestNo-infant");
+      $("#cnt-up-infant").click(function () {
+        guestAmountInfant.val(
+          Math.min(parseInt($("#guestNo-infant").val()) + 1, 20)
+        );
+      });
+      $("#cnt-down-infant").click(function () {
+        guestAmountInfant.val(
+          Math.max(parseInt($("#guestNo-infant").val()) - 1, 0)
+        );
+      });
+      $("#checkboxRDay").click(function () {
+        $("#ReturnDay").toggle("disabled");
+      });
     });
+  }
+  ClickBookNow = (e) => {
+    var ValAdult = document.getElementById("guestNo-adult").value;
+    var ValChild = document.getElementById("guestNo-child").value;
+    var ValInfant = document.getElementById("guestNo-infant").value;
+    this.setState({
+      adult: ValAdult,
+      child: ValChild,
+      infant: ValInfant,
+    });
+    console.log(this.state);
+    e.preventDefault()
+    setTimeout(() => {
+        this.props.history.push('/select-ticket')
+        console.log(this.state);
+    },1000)
+
+  };
+
+  clicktest = () => {
+    this.setState({
+      adult: 12,
+      child: 13,
+      infant: 14,
+    });
+    console.log(this.state);
   }
   render() {
     return (
@@ -42,13 +89,19 @@ export class Banve extends Component {
           <form>
             <div className="location">
               <label htmlFor="location">FROM</label>
-              <input type="text" name="location" placeholder="New York, NY" />
+              <input
+                type="text"
+                name="location"
+                className="address"
+                placeholder="New York, NY"
+              />
             </div>
             <div className="location">
               <label htmlFor="location">TO</label>
               <input
                 type="text"
                 name="location"
+                className="address"
                 placeholder="Ho Chi Minh, VietNam"
               />
             </div>
@@ -64,53 +117,69 @@ export class Banve extends Component {
             </div>
             <div id="Passengers" className="collapse">
               <div className="guests">
-                <label htmlFor="guests">ADULT</label>
+                <label>ADULT</label>
                 <br />
                 <br />
-                <button className="counter-btn" type="button" id="cnt-down">
+                <button
+                  className="counter-btn"
+                  type="button"
+                  id="cnt-down-adult"
+                >
                   -
                 </button>
                 <input
                   type="text"
-                  id="guestNo"
+                  id="guestNo-adult"
                   name="guests"
                   defaultValue={1}
                 />
-                <button className="counter-btn" type="button" id="cnt-up">
+                <button className="counter-btn" type="button" id="cnt-up-adult">
                   +
                 </button>
               </div>
               <div className="guests">
-                <label htmlFor="guests">CHILD</label>
+                <label>CHILD</label>
                 <br />
                 <br />
-                <button className="counter-btn" type="button" id="cnt-down">
+                <button
+                  className="counter-btn"
+                  type="button"
+                  id="cnt-down-child"
+                >
                   -
                 </button>
                 <input
                   type="text"
-                  id="guestNo"
+                  id="guestNo-child"
                   name="guests"
                   defaultValue={0}
                 />
-                <button className="counter-btn" type="button" id="cnt-up">
+                <button className="counter-btn" type="button" id="cnt-up-child">
                   +
                 </button>
               </div>
               <div className="guests">
-                <label htmlFor="guests">INFANT</label>
+                <label>INFANT</label>
                 <br />
                 <br />
-                <button className="counter-btn" type="button" id="cnt-down">
+                <button
+                  className="counter-btn"
+                  type="button"
+                  id="cnt-down-infant"
+                >
                   -
                 </button>
                 <input
                   type="text"
-                  id="guestNo"
+                  id="guestNo-infant"
                   name="guests"
                   defaultValue={0}
                 />
-                <button className="counter-btn" type="button" id="cnt-up">
+                <button
+                  className="counter-btn"
+                  type="button"
+                  id="cnt-up-infant"
+                >
                   +
                 </button>
               </div>
@@ -122,13 +191,41 @@ export class Banve extends Component {
                 <input name="arrival" type="date" />
               </div>
               <div className="departure">
-                <label htmlFor="arrival" ><input type="checkbox" id="checkboxRDay" className="CBReturnDay" value=""/>RETURN DAY</label>
-                <input id="ReturnDay"name="departure" type="date" hidden/>
+                <label htmlFor="arrival">
+                  <input
+                    type="checkbox"
+                    id="checkboxRDay"
+                    className="CBReturnDay"
+                    value=""
+                  />
+                  RETURN DAY
+                </label>
+                <input id="ReturnDay" name="departure" type="date" hidden />
               </div>
             </div>
           </form>
-          <button className="btn" type="button">
-            BOOK NOW
+          <button
+            className="btn-ban-ve"
+            type="button"
+            //onClick={this.ClickBookNow}
+          >
+            <NavLink
+              onClick={this.ClickBookNow}
+              to={{
+                pathname: "/select-ticket",
+                noCustomer: {
+                  adult: this.state.adult,
+                  child: this.state.child,
+                  infant: this.state.infant,
+                },
+              }}
+              className="textBookNow"
+            >
+              BOOK NOW
+            </NavLink>
+          </button>
+          <button onClick = {this.clicktest }>
+          click
           </button>
         </div>
       </div>

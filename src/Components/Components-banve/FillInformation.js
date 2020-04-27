@@ -1,37 +1,82 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import "../../css/FillInformation.css";
-
+import ComponentsFillInfo from "../Components-banve/ComponentsFillInfo";
+import { NavLink } from "react-router-dom";
 export class FillInformation extends Component {
-  componentDidMount(){
-    $(document).ready(function(){
-      $('#CB-email').click(function(){
-        if($('#CB-email').prop("checked")){
-          $('#CB-sms').prop("checked",false);
-          $('#CB-call').prop("checked",false);
+  constructor(props) {
+    super(props);
+    this.state = {
+      infant: "0",
+      child: "0",
+      adult: "1",
+    };
+  }
+  componentDidMount() {
+    $(document).ready(function () {
+      $("#CB-email").click(function () {
+        if ($("#CB-email").prop("checked")) {
+          $("#CB-sms").prop("checked", false);
+          $("#CB-call").prop("checked", false);
         }
-      })
-      $('#CB-sms').click(function(){
-        if($('#CB-sms').prop("checked")){
-          $('#CB-email').prop("checked",false);
-          $('#CB-call').prop("checked",false);
+      });
+      $("#CB-sms").click(function () {
+        if ($("#CB-sms").prop("checked")) {
+          $("#CB-email").prop("checked", false);
+          $("#CB-call").prop("checked", false);
         }
-      })
-      $('#CB-call').click(function(){
-        if($('#CB-call').prop("checked")){
-          $('#CB-email').prop("checked",false);
-          $('#CB-sms').prop("checked",false);
+      });
+      $("#CB-call").click(function () {
+        if ($("#CB-call").prop("checked")) {
+          $("#CB-email").prop("checked", false);
+          $("#CB-sms").prop("checked", false);
         }
-      })
-    })
+      });
+      $("#CB-Yes").click(function () {
+        if ($("#CB-Yes").prop("checked")) {
+          $("#CB-No").prop("checked", false);
+        }
+      });
+      $("#CB-No").click(function () {
+        if ($("#CB-No").prop("checked")) {
+          $("#CB-Yes").prop("checked", false);
+        }
+      });
+    });
   }
   render() {
+    if(this.props.location.noCustomer == null){
+      var { adult, child, infant } = this.state;
+    }
+    else{
+      var { adult, child, infant } = this.props.location.noCustomer;
+    }
+    var i;
+    var RenderAdult = [];
+    for (i = 0; i < adult; i++) {
+      RenderAdult.push(
+        <ComponentsFillInfo customer="Adult" key = {i}> </ComponentsFillInfo>
+      );
+    }
+    var RenderChild = [];
+    for (i = 0; i < child; i++) {
+      RenderChild.push(
+        <ComponentsFillInfo customer="Child" key = {i}> </ComponentsFillInfo>
+      );
+    }
+    var RenderInfant = [];
+    for (i = 0; i < infant; i++) {
+      RenderInfant.push(
+        <ComponentsFillInfo customer="Infant" key = {i}> </ComponentsFillInfo>
+      );
+    }
+
     return (
       <div>
         <form className="form-address" id="address">
-          <div className="container mt-5 mb-5 panel panel-primary">
+          <div className="container mt-5 mb-5 panel panel-header-fill panel-primary">
             <div className="row mt-5 mb-5 panel-heading">
-              <h4 className="col">Reseller information</h4>
+              <h4 className="col">Buyer information</h4>
             </div>
             <div className="panel-body">
               <div className="row">
@@ -93,31 +138,53 @@ export class FillInformation extends Component {
                 </div>
               </div>
               <div className="row">
-                <label className="col-12">Permission to contact</label>
+                <label className="col-12">Contact you by: </label>
                 <div className="form-group col">
                   <label className="custom-checkbox">
                     Email
-                    <input type="checkbox" id="CB-email"/>
+                    <input type="checkbox" id="CB-email" />
                     <span className="custom-control-input"></span>
                   </label>
                   <label className="custom-checkbox">
                     SMS
-                    <input type="checkbox" id="CB-sms"/>
+                    <input type="checkbox" id="CB-sms" />
                     <span className="custom-control-input"></span>
                   </label>
                   <label className="custom-checkbox">
                     Phone call
-                    <input type="checkbox" id="CB-call"/>
+                    <input type="checkbox" id="CB-call" />
+                    <span className="custom-control-input"></span>
+                  </label>
+                </div>
+              </div>
+              <div className="row">
+                <label className="col-12">Do you want to buy insurance ?</label>
+                <div className="form-group col">
+                  <label className="custom-checkbox">
+                    Yes
+                    <input type="checkbox" id="CB-Yes" />
+                    <span className="custom-control-input"></span>
+                  </label>
+                  <label className="custom-checkbox">
+                    No
+                    <input type="checkbox" id="CB-No" />
                     <span className="custom-control-input"></span>
                   </label>
                 </div>
               </div>
             </div>
           </div>
+          {RenderAdult}
+          {RenderChild}
+          {RenderInfant}
           <div className="container">
-            <button className="btn btn-primary" type="submit">
-              Save
-            </button>
+            <NavLink
+              to=""
+              className="btn btn-primary btn-color"
+              type="submit"
+            >
+              Book Tickets
+            </NavLink>
           </div>
         </form>
       </div>

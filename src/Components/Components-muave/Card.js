@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
+
   NavLink,
 } from "react-router-dom";
-import SeatNumber from "../Components-muave/SeatNumber";
+
 
 export class Card extends Component {
   constructor(props) {

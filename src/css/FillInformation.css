@@ -14,8 +14,8 @@ body {
   font-family: "Muli", sans-serif;
 }
 
-.panel{
-  margin-top: 2rem !important;
+.panel-header-fill{
+  margin-top: 2rem;
 }
 .material-icons {
   color: #B2B9BC;
@@ -142,4 +142,7 @@ body {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.btn-color{
+  color: #ffffff !important;
 }

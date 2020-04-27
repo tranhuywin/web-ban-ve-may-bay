@@ -1,0 +1,150 @@
+/****** Bootstrap Colors ******/
+.primary {
+    min-height: 800px;
+  }
+  /*** Accordion Toggles ***/
+  .panel-heading {
+    position: relative;
+  }
+  .panel-heading .accordion-toggle:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e260";
+    position: absolute;
+    right: 16px;
+  }
+  .panel-heading .accordion-toggle.collapsed:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e259";
+  }
+  /*** Filter Menu ***/
+  /* Panels */
+  .filter-menu .panel {
+    border-radius: 0;
+    border: 1px solid #eeeeee;
+  }
+  .filter-menu .panel-heading {
+    background: #fff;
+    padding: 0;
+  }
+  .filter-menu .panel-title {
+    color: #ffffff;
+    font-weight: bold;
+    display: block;
+    padding: 16px;
+  }
+  .filter-menu a.panel-title {
+    color: #ffffff;
+  }
+  .filter-menu a.panel-title:hover,
+  .filter-menu a.panel-title:focus {
+    color: #333333;
+    text-decoration: none;
+  }
+  .filter-menu .panel-body {
+    padding: 16px;
+  }
+  /* Inner Panels */
+  .filter-menu .panel-group {
+    margin: -16px;
+  }
+  .filter-menu .panel-group .panel-title {
+    background: #eee;
+    transition: color, 0.5s, ease;
+  }
+  .filter-menu .panel-group .panel-title:hover {
+    color: #333333;
+    text-decoration: none;
+    background: #777777;
+  }
+  .filter-menu .panel-group .panel + .panel {
+    margin-top: 0;
+  }
+  
+  
+  /*** Sticky Footer ***/
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    margin-bottom: 60px;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+  }
+/****** Bootstrap Colors ******/
+.primary {
+    min-height: 800px;
+  }
+  /*** Accordion Toggles ***/
+  .panel-heading {
+    position: relative;
+  }
+  .panel-heading .accordion-toggle:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e260";
+    position: absolute;
+    right: 16px;
+  }
+  .panel-heading .accordion-toggle.collapsed:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e259";
+  }
+  /*** Filter Menu ***/
+  /* Panels */
+  .filter-menu .panel {
+    border-radius: 0;
+    border: 1px solid #eeeeee;
+  }
+  .filter-menu .panel-heading {
+    background: #fff;
+    padding: 0;
+  }
+  .filter-menu .panel-title {
+    color: #333333;
+    font-weight: bold;
+    display: block;
+    padding: 16px;
+  }
+  .filter-menu a.panel-title {
+    color: #333333;
+  }
+  .filter-menu a.panel-title:hover,
+  .filter-menu a.panel-title:focus {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .filter-menu .panel-body {
+    padding: 16px;
+  }
+  /* Inner Panels */
+  .filter-menu .panel-group {
+    margin: -16px;
+  }
+  .filter-menu .panel-group .panel-title {
+    background: #63CEC6;
+    transition: color, 0.5s, ease;
+  }
+  .filter-menu .panel-group .panel-title:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background: #63CEC6;
+  }
+  .filter-menu .panel-group .panel + .panel {
+    margin-top: 0;
+  }
+  /* Panels - Mobile */
+ *** Footer ******/
+
+  /*** Sticky Footer ***/
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+.CB{
+    width: 13px !important;
+    height: 13px !important;
+}
