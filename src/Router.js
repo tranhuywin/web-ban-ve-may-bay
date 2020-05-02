@@ -5,6 +5,9 @@ import Banve from "./Components/Ban-ve";
 import Muave from "./Components/Mua-ve";
 import FillInformation from "./Components/Components-banve/FillInformation";
 import SelectTickets from "./Components/Components-banve/SelectTickets";
+import CheckOut from './Components/Components-banve/CheckOut';
+import login from './Components/Component-Login/login';
+
 export class RouterApp extends Component {
   render() {
     return (
@@ -19,6 +22,8 @@ export class RouterApp extends Component {
             component={FillInformation}
           ></Route>
           <Route path="/select-ticket" component={SelectTickets}></Route>
+          <Route path="/check-out" component={CheckOut}></Route>
+          <Route path="/login" component={login}></Route>
         </Switch>
       </div>
     );

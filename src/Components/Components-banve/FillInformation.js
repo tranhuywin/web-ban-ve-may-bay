@@ -3,6 +3,8 @@ import $ from "jquery";
 import "../../css/FillInformation.css";
 import ComponentsFillInfo from "../Components-banve/ComponentsFillInfo";
 import { NavLink } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+
 export class FillInformation extends Component {
   constructor(props) {
     super(props);
@@ -45,29 +47,44 @@ export class FillInformation extends Component {
     });
   }
   render() {
-    if(this.props.location.noCustomer == null){
-      var { adult, child, infant } = this.state;
+    if (this.props.location.TicketSelect == null || this.props.location.noCustomer == null) {
+      //alert("You haven't filled out the information")
+      return <Redirect to="/ban-ve"></Redirect>;
     }
-    else{
+    if (this.props.location.noCustomer == null) {
+      var { adult, child, infant } = this.state;
+    } else {
       var { adult, child, infant } = this.props.location.noCustomer;
     }
+    if (this.props.location.TicketSelect == null) {
+      var { id, airline, depart,arrive,duration,price } = null;
+    } else {
+      var { id, airline, depart,arrive,duration,price } = this.props.location.TicketSelect.selected[0];
+    }
+    console.log(airline);
     var i;
     var RenderAdult = [];
     for (i = 0; i < adult; i++) {
       RenderAdult.push(
-        <ComponentsFillInfo customer="Adult" key = {i}> </ComponentsFillInfo>
+        <ComponentsFillInfo customer="Adult" key={i}>
+          {" "}
+        </ComponentsFillInfo>
       );
     }
     var RenderChild = [];
     for (i = 0; i < child; i++) {
       RenderChild.push(
-        <ComponentsFillInfo customer="Child" key = {i}> </ComponentsFillInfo>
+        <ComponentsFillInfo customer="Child" key={i}>
+          {" "}
+        </ComponentsFillInfo>
       );
     }
     var RenderInfant = [];
     for (i = 0; i < infant; i++) {
       RenderInfant.push(
-        <ComponentsFillInfo customer="Infant" key = {i}> </ComponentsFillInfo>
+        <ComponentsFillInfo customer="Infant" key={i}>
+          {" "}
+        </ComponentsFillInfo>
       );
     }
 
@@ -179,7 +196,26 @@ export class FillInformation extends Component {
           {RenderInfant}
           <div className="container">
             <NavLink
-              to=""
+              to={{
+                pathname: "/check-out",
+                noCustomer: {
+                  adult: adult,
+                  child: child,
+                  infant: infant,
+                },
+                TicketSelect: {
+                  selected: [
+                    {
+                      id: id,
+                      airline: airline,
+                      depart: depart,
+                      arrive: arrive,
+                      duration: duration,
+                      price: price,
+                    },
+                  ],
+                },
+              }}
               className="btn btn-primary btn-color"
               type="submit"
             >

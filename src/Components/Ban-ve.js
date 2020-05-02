@@ -8,8 +8,8 @@ export class Banve extends Component {
     super(props);
     this.state = {
       adult: 1,
-      child: 1,
-      infant: 1,
+      child: 0,
+      infant: 0,
     };
   }
   componentDidMount() {
@@ -55,7 +55,7 @@ export class Banve extends Component {
       });
     });
   }
-  ClickBookNow = (e) => {
+  ClickBookNow = () => {
     var ValAdult = document.getElementById("guestNo-adult").value;
     var ValChild = document.getElementById("guestNo-child").value;
     var ValInfant = document.getElementById("guestNo-infant").value;
@@ -64,23 +64,19 @@ export class Banve extends Component {
       child: ValChild,
       infant: ValInfant,
     });
-    console.log(this.state);
-    e.preventDefault()
-    setTimeout(() => {
-        this.props.history.push('/select-ticket')
-        console.log(this.state);
-    },1000)
-
+    //console.log(this.state);
   };
-
-  clicktest = () => {
+  OnChange = () => {
+    var ValAdult = document.getElementById("guestNo-adult").value;
+    var ValChild = document.getElementById("guestNo-child").value;
+    var ValInfant = document.getElementById("guestNo-infant").value;
     this.setState({
-      adult: 12,
-      child: 13,
-      infant: 14,
+      adult: ValAdult,
+      child: ValChild,
+      infant: ValInfant,
     });
-    console.log(this.state);
-  }
+    //console.log(this.state);
+  };
   render() {
     return (
       <div>
@@ -107,7 +103,7 @@ export class Banve extends Component {
             </div>
             <div>
               <button
-                className="btn-Passengers"
+                className="btn-Passengers  button button-block"
                 type="button"
                 data-toggle="collapse"
                 data-target="#Passengers"
@@ -124,6 +120,7 @@ export class Banve extends Component {
                   className="counter-btn"
                   type="button"
                   id="cnt-down-adult"
+                  onClick={this.OnChange}
                 >
                   -
                 </button>
@@ -133,7 +130,12 @@ export class Banve extends Component {
                   name="guests"
                   defaultValue={1}
                 />
-                <button className="counter-btn" type="button" id="cnt-up-adult">
+                <button
+                  className="counter-btn"
+                  type="button"
+                  id="cnt-up-adult"
+                  onClick={this.OnChange}
+                >
                   +
                 </button>
               </div>
@@ -145,6 +147,7 @@ export class Banve extends Component {
                   className="counter-btn"
                   type="button"
                   id="cnt-down-child"
+                  onClick={this.OnChange}
                 >
                   -
                 </button>
@@ -154,7 +157,12 @@ export class Banve extends Component {
                   name="guests"
                   defaultValue={0}
                 />
-                <button className="counter-btn" type="button" id="cnt-up-child">
+                <button
+                  className="counter-btn"
+                  type="button"
+                  id="cnt-up-child"
+                  onClick={this.OnChange}
+                >
                   +
                 </button>
               </div>
@@ -166,6 +174,7 @@ export class Banve extends Component {
                   className="counter-btn"
                   type="button"
                   id="cnt-down-infant"
+                  onClick={this.OnChange}
                 >
                   -
                 </button>
@@ -179,6 +188,7 @@ export class Banve extends Component {
                   className="counter-btn"
                   type="button"
                   id="cnt-up-infant"
+                  onClick={this.OnChange}
                 >
                   +
                 </button>
@@ -205,7 +215,7 @@ export class Banve extends Component {
             </div>
           </form>
           <button
-            className="btn-ban-ve"
+            className="btn-ban-ve  button button-block"
             type="button"
             //onClick={this.ClickBookNow}
           >
@@ -223,9 +233,6 @@ export class Banve extends Component {
             >
               BOOK NOW
             </NavLink>
-          </button>
-          <button onClick = {this.clicktest }>
-          click
           </button>
         </div>
       </div>

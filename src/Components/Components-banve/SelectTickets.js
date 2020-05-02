@@ -14,7 +14,7 @@ export class SelectTickets extends Component {
           depart: "7:00 am",
           arrive: "8:00 pm",
           duration: "30h 10m - 2 stops",
-          price: "1.000.000 VND",
+          price: "1,000,000",
         },
       ],
       ticket: [
@@ -24,7 +24,7 @@ export class SelectTickets extends Component {
           depart: "7:00 am",
           arrive: "8:00 pm",
           duration: "30h 10m - 2 stops",
-          price: "1.000.000 VND",
+          price: "1,000,000",
         },
         {
           id: 2,
@@ -32,7 +32,7 @@ export class SelectTickets extends Component {
           depart: "8:00 am",
           arrive: "9:00 pm",
           duration: "20h 10m - 2 stops",
-          price: "1.500.000 VND",
+          price: "1,500,000",
         },
         {
           id: 3,
@@ -40,7 +40,7 @@ export class SelectTickets extends Component {
           depart: "6:30 am",
           arrive: "9:00 pm",
           duration: "34h 10m - 1 stops",
-          price: "1.200.000 VND",
+          price: "1,200,000",
         },
         {
           id: 4,
@@ -48,7 +48,7 @@ export class SelectTickets extends Component {
           depart: "12:00 am",
           arrive: "1:00 am",
           duration: "25h 10m - 1 stops",
-          price: "1.300.000 VND",
+          price: "1,300,000",
         },
         {
           id: 5,
@@ -56,7 +56,7 @@ export class SelectTickets extends Component {
           depart: "9:00 am",
           arrive: "0:00 am",
           duration: "22h 10m - 2 stops",
-          price: "1.000.000 VND",
+          price: "1,000,000",
         },
       ],
       noCustomer : [{
@@ -81,19 +81,20 @@ export class SelectTickets extends Component {
       ],
     });
     alert("You have chosen another ticket");
-    //console.log(this.state.ticket[id - 1].airline);
+    console.log(this.state.ticket[id - 1].airline);
   };
 
   render() {
-    //console.log(this.props.location.noCustomer);
+    
     if(this.props.location.noCustomer == null){
-      var { adult, child, infant } = this.state.noCustomer;
+      var { adult, child, infant } = this.state.noCustomer[0];
     }
     else{
       var { adult, child, infant } = this.props.location.noCustomer;
     }
-    console.log(child);
+    
     var { selected, ticket } = this.state;
+    //console.log(selected[0].airline);
     var TableTicketSelect = selected.map((select, index) => {
       return (
         <tr key={index}>
@@ -101,19 +102,19 @@ export class SelectTickets extends Component {
           <td>{select.depart}</td>
           <td>{select.arrive}</td>
           <td>{select.duration}</td>
-          <td>{select.price}</td>
+          <td>{select.price} VND</td>
         </tr>
       );
     });
     var TableTicket = ticket.map((ticket, index) => {
       return (
-        <tr key={ticket.id}>
+        <tr key={index}>
           <td>{ticket.airline}</td>
           <td>{ticket.depart}</td>
           <td>{ticket.arrive}</td>
           <td>{ticket.duration}</td>
           <td id={ticket.id} onClick={this.ClickTr} className="btn btn-info">
-            {ticket.price}
+            {ticket.price} VND
           </td>
         </tr>
       );
@@ -184,12 +185,12 @@ export class SelectTickets extends Component {
                 TicketSelect: {
                   selected: [
                     {
-                      id: this.state.selected.id,
-                      airline: this.state.selected.airline,
-                      depart: this.state.selected.depart,
-                      arrive: this.state.selected.arrive,
-                      duration: this.state.selected.duration,
-                      price: this.state.selected.price,
+                      id: this.state.selected[0].id,
+                      airline: this.state.selected[0].airline,
+                      depart: this.state.selected[0].depart,
+                      arrive: this.state.selected[0].arrive,
+                      duration: this.state.selected[0].duration,
+                      price: this.state.selected[0].price,
                     },
                   ],
                 },
