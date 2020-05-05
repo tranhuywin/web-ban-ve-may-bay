@@ -282,3 +282,19 @@ ul li:hover {
     padding: 0 !important;
 
 }
+.order-info-content p{
+  color: #888888;
+}
+.order-info-content span{
+  color: #888888;
+}
+.discount{
+  border: #1F253D solid 2px;
+  margin-bottom: 0;
+  padding: 0 10px;
+  height: 40px;
+  font-size: 17px;
+}
+.discount:hover{
+  border-color: #4488dd;
+}

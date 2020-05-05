@@ -115,6 +115,7 @@ h1, h2, p, a, span{
 
 .icon {
 	font-size: 25px;
+	vertical-align: auto !important;
 }
 
 .titular {
@@ -167,7 +168,7 @@ h1, h2, p, a, span{
 				}
 				.menu-box-menu .icon {
 					display: inline-block;
-					vertical-align: top;
+					/* vertical-align: top; */
 					width: 28px;
 					margin-left: 20px;
 					margin-right: 15px;

@@ -3,6 +3,12 @@ import "../../css/checkout.css";
 import { Redirect } from "react-router-dom";
 
 export class CheckOut extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      CodeDiscount: false,
+    };
+  }
   OnTransfer = (e) => {
     if (e.target.value === "Transfer") {
       document.getElementById("Fill-Info").hidden = true;
@@ -11,6 +17,11 @@ export class CheckOut extends Component {
       document.getElementById("Fill-Info").hidden = false;
       document.getElementById("BankTransfer").hidden = true;
     }
+  };
+  onDiscount = (e) => {
+    e.target.value == "ABCDEF"
+      ? this.setState({ CodeDiscount: true })
+      : this.setState({ CodeDiscount: false });
   };
   render() {
     if (
@@ -35,7 +46,6 @@ export class CheckOut extends Component {
             <div className="order-info">
               <div className="order-info-content">
                 <h2>Order Summary</h2>
-                <div className="line" />
                 <p>
                   Customers: {adult} adult, {child} child, {infant} infant.
                 </p>
@@ -49,18 +59,30 @@ export class CheckOut extends Component {
                 <div className="line" />
                 <p>Insurance: 1.000.000 VND</p>
                 <div className="line" />
+                <input
+                  className="discount"
+                  placeholder="Code discount"
+                  onChange={this.onDiscount}
+                ></input>
+                <div className="line" />
                 <div className="total">
                   <span style={{ float: "left" }}>
+                    <div className="thin dense">Discount</div>
                     <div className="thin dense">Tickets</div>
                     <div className="thin dense">Insurance</div>
                     <div className="thin dense">VAT 19%</div>
                     TOTAL
                   </span>
                   <span style={{ float: "right", textAlign: "right" }}>
+                    <div className="thin dense">
+                      {this.state.CodeDiscount ? "-500,000 VND" : "-0 VND"}
+                    </div>
                     <div className="thin dense">{price} VND</div>
                     <div className="thin dense">1.000.000 VND</div>
                     <div className="thin dense">500.000 VND</div>
-                    3.000.000 VND
+                    {this.state.CodeDiscount
+                      ? " 2,500,000 VND"
+                      : "3,000,000 VND"}
                   </span>
                 </div>
               </div>

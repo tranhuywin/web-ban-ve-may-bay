@@ -145,4 +145,11 @@ body {
 }
 .btn-color{
   color: #ffffff !important;
+  margin-bottom: 40px !important;
+  background-color: #11a8ab !important;
+  height: 45px;
+  font-size: 16px;
+}
+.panel-heading {
+  background-color: #11a8ab !important;
 }

@@ -17,7 +17,7 @@ export class App extends Component {
   }
   render() {
     const BtnLogin = this.state.IsLogin ? (
-      <Link to="/">Account</Link>
+      <Link to="/account">Account</Link>
     ) : (
       <Link to="/login">Login</Link>
     );

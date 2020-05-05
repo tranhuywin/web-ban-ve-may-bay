@@ -15,7 +15,7 @@ export class account extends Component {
               <ul className="menu-box-menu">
                 <li>
                   <a className="menu-box-tab" href="#6">
-                    <span className="icon fontawesome-envelope scnd-font-color" />
+                    <span className="icon fas fa-star-of-david  scnd-font-color"/>
                     Points<div className="menu-box-number">10,000</div>
                   </a>
                 </li>
@@ -62,7 +62,7 @@ export class account extends Component {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    <span className="icon fontawesome-envelope scnd-font-color" />
+                    <span className="icon fas fa-tags scnd-font-color" />
                     Discount
                     <div className="menu-box-number">Show</div>
                     <ul class="dropdown-menu menu-box-menu" id="discount">

@@ -215,11 +215,9 @@ export class Banve extends Component {
             </div>
           </form>
           <button
-            className="btn-ban-ve  button button-block"
-            type="button"
-            //onClick={this.ClickBookNow}
+          className=" btn-ban-ve button"
           >
-            <NavLink
+          <NavLink
               onClick={this.ClickBookNow}
               to={{
                 pathname: "/select-ticket",
@@ -229,11 +227,13 @@ export class Banve extends Component {
                   infant: this.state.infant,
                 },
               }}
-              className="textBookNow"
+              //className="btn btn-info"
+              className=" textBookNow button button-block"
             >
-              BOOK NOW
+            Book now
             </NavLink>
           </button>
+            
         </div>
       </div>
     );

@@ -6,7 +6,7 @@ export class Filter extends Component {
       <div>
         <div>
           <div className="primary">
-            <h2>Filter</h2>
+            <h1>Filter</h1>
             <div className="filter-menu">
               <form>
                 <div className="panel panel-default">
@@ -34,7 +34,7 @@ export class Filter extends Component {
                         Clear Selections
                       </a>
                       <a
-                        className="btn btn-sm btn-link pull-right hidden-sm"
+                        className="btn btn-default pull-right"
                         href="/"
                       >
                         Reset

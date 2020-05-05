@@ -91,7 +91,7 @@ export class FillInformation extends Component {
     return (
       <div>
         <form className="form-address" id="address">
-          <div className="container mt-5 mb-5 panel panel-header-fill panel-primary">
+          <div className="container mt-5 mb-5 panel panel-header-fill panel-primary menu-box">
             <div className="row mt-5 mb-5 panel-heading">
               <h4 className="col">Buyer information</h4>
             </div>
