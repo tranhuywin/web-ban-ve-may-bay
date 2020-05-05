@@ -28,25 +28,6 @@ export class CheckOut extends Component {
       duration,
       price,
     } = this.props.location.TicketSelect.selected[0];
-
-    // var Ticket = () => {
-    //   let sum =
-    //     Number(adult) * Number(price) +
-    //     Number(child) * Number(price) +
-    //     Number(adult) * Number(price);
-    //   sum.toString();
-    //   console.log(sum);
-    //   return <p>sum</p>;
-    // };
-    // var Insurance = () => {
-    //   let sum =
-    //     Number(adult) * 1000000 +
-    //     Number(child) * 750000 +
-    //     Number(infant) * 500000;
-    //   sum.toString();
-    //   console.log(sum);
-    //   return <p>sum</p>;
-    // };
     return (
       <div>
         <div className="container-checkout">

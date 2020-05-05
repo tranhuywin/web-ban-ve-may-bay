@@ -7,7 +7,7 @@ import FillInformation from "./Components/Components-banve/FillInformation";
 import SelectTickets from "./Components/Components-banve/SelectTickets";
 import CheckOut from './Components/Components-banve/CheckOut';
 import login from './Components/Component-Login/login';
-
+import account from "./Components/Component-Login/account";
 export class RouterApp extends Component {
   render() {
     return (
@@ -24,6 +24,7 @@ export class RouterApp extends Component {
           <Route path="/select-ticket" component={SelectTickets}></Route>
           <Route path="/check-out" component={CheckOut}></Route>
           <Route path="/login" component={login}></Route>
+          <Route path="/account" component={account}></Route>
         </Switch>
       </div>
     );
