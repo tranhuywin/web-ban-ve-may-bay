@@ -43,7 +43,7 @@ export class account extends Component {
               <div className="profile-picture big-profile-picture clear">
                 <img
                   width="150px"
-                  alt="Anne Hathaway picture"
+                  alt="picture admin"
                   src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.0-9/p960x960/46144263_2395419153819891_3364316473584517120_o.jpg?_nc_cat=108&_nc_sid=7aed08&_nc_oc=AQlO9rd30XqahOucEoPb9loLaMhUVbxNH2sgU4fEy1Yzsz4e9QlPgFF6j6ZqTrQ7X4DspD1XLcWuk7o1suRHXeVq&_nc_ht=scontent.fsgn5-5.fna&_nc_tp=6&oh=2bfb17d72bfd33f69244d0c95aed4305&oe=5ED73118"
                 />
               </div>
@@ -65,7 +65,7 @@ export class account extends Component {
                     <span className="icon fas fa-tags scnd-font-color" />
                     Discount
                     <div className="menu-box-number">Show</div>
-                    <ul class="dropdown-menu menu-box-menu" id="discount">
+                    <ul className="dropdown-menu menu-box-menu" id="discount">
                       <li className="li-code">
                         <span className="code">Code: ABCDEF</span> -5%
                         <span className="time-expired">
