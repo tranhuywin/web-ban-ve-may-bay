@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./../../css/login.scss";
 import $ from "jquery";
 import { Redirect } from "react-router-dom";
+import axios from 'axios';
 
 export class login extends Component {
   constructor(props) {
@@ -47,6 +48,29 @@ export class login extends Component {
 
       $($(this).attr("href")).fadeIn(600);
     });
+  }
+  login = (e) =>{
+    e.preventDefault();
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    let req = {
+      email : email,
+      password : password,
+    }
+    axios.post('http://localhost:9000/login',req)
+    .then(Response =>{
+      console.log(Response.data.status);
+      if(Response.data.status === "Login success!!"){
+        localStorage.setItem("account",JSON.stringify({user: email, password: password}));
+        window.location.replace("/ban-ve");
+      }
+      else{
+        alert(Response.data.status);
+      }
+    })
+    .catch (err => {
+      console.log(err);
+    })
   }
   render() {
     if(localStorage.getItem("account")){
@@ -123,16 +147,17 @@ export class login extends Component {
             }
             <div id="login">
               <h1 className="title-login">Welcome Back!</h1>
-              <form>
+              <form onSubmit={this.login}>
                 <div className="field-wrap">
                   <label className="label-login">
                     Email Address<span className="req">*</span>
                   </label>
                   <input
                     className="input-login"
-                    type="email"
+                    type="text"
                     required
                     autoComplete="off"
+                    id="email"
                   />
                 </div>
                 <div className="field-wrap">
@@ -142,15 +167,15 @@ export class login extends Component {
                   <input
                     className="input-login"
                     type="password"
-                    required
                     autoComplete="off"
+                    id="password"
                   />
                 </div>
                 <p className="forgot">
                   <a href="/">Forgot Password?</a>
                 </p>
                 <button
-                  onClick={this.OnChangeStateLogin}
+                  //onClick={this.OnChangeStateLogin}
                   className="button button-block"
                 >
                   Log In
