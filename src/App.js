@@ -30,7 +30,17 @@ export class App extends Component {
             </NavLink>
             <ul className="nav navbar-nav">
               <li>
-                <Link to="/ban-ve">Ban ve</Link>
+                <Link to="/buy-ticket">Buy tickets</Link>
+              </li>
+            </ul>
+            <ul className="nav navbar-nav">
+              <li>
+                <Link to="/edit-tickets">Edit tickets</Link>
+              </li>
+            </ul>
+            <ul className="nav navbar-nav">
+              <li>
+                <Link to="/edit-users">Edit users</Link>
               </li>
             </ul>
             <ul className="nav navbar-nav navbar-right des">

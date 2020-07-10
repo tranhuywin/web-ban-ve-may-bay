@@ -49,29 +49,30 @@ export class login extends Component {
       $($(this).attr("href")).fadeIn(600);
     });
   }
-  login = (e) =>{
-    e.preventDefault();
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
-    let req = {
-      email : email,
-      password : password,
-    }
-    axios.post('http://localhost:9000/login',req)
-    .then(Response =>{
-      console.log(Response.data.status);
-      if(Response.data.status === "Login success!!"){
-        localStorage.setItem("account",JSON.stringify({user: email, password: password}));
-        window.location.replace("/ban-ve");
-      }
-      else{
-        alert(Response.data.status);
-      }
-    })
-    .catch (err => {
-      console.log(err);
-    })
-  }
+  // su dung api de kiem tra login
+  // login = (e) =>{
+  //   e.preventDefault();
+  //   let email = document.getElementById('email').value;
+  //   let password = document.getElementById('password').value;
+  //   let req = {
+  //     email : email,
+  //     password : password,
+  //   }
+  //   axios.post('http://localhost:9000/login',req)
+  //   .then(Response =>{
+  //     console.log(Response.data.status);
+  //     if(Response.data.status === "Login success!!"){
+  //       localStorage.setItem("account",JSON.stringify({user: email, password: password}));
+  //       window.location.replace("/ban-ve");
+  //     }
+  //     else{
+  //       alert(Response.data.status);
+  //     }
+  //   })
+  //   .catch (err => {
+  //     console.log(err);
+  //   })
+  // }
   render() {
     if(localStorage.getItem("account")){
       return <Redirect to="/ban-ve"></Redirect>
@@ -142,8 +143,7 @@ export class login extends Component {
                 </button>
               </form>
             </div>
-            {
-              // sign up
+            {// sign up
             }
             <div id="login">
               <h1 className="title-login">Welcome Back!</h1>
@@ -175,7 +175,7 @@ export class login extends Component {
                   <a href="/">Forgot Password?</a>
                 </p>
                 <button
-                  //onClick={this.OnChangeStateLogin}
+                  onClick={this.OnChangeStateLogin}
                   className="button button-block"
                 >
                   Log In
