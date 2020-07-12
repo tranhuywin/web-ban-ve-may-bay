@@ -43,6 +43,11 @@ export class App extends Component {
                 <Link to="/edit-users">Edit users</Link>
               </li>
             </ul>
+            <ul className="nav navbar-nav">
+              <li>
+                <Link to="/statistical">Statistical</Link>
+              </li>
+            </ul>
             <ul className="nav navbar-nav navbar-right des">
               <li>{BtnLogin}</li>
             </ul>

@@ -10,6 +10,7 @@ import account from "./Components/Component-Login/account";
 import EditTickets from "./Components/Edit-tickets";
 import EditUsers from "./Components/Edit-users";
 import EditAccount from "./Components/Components-EditUser/Edit-Account";
+import Statistical from "./Components/Components-statistical/Statistical";
 
 export class RouterApp extends Component {
   render() {
@@ -29,6 +30,7 @@ export class RouterApp extends Component {
           <Route path="/edit-users" component={EditUsers}></Route>
           <Route path="/account" component={account}></Route>
           <Route path="/edit-account" component={EditAccount}></Route>
+          <Route path="/statistical" component={Statistical}></Route>
         </Switch>
       </div>
     );

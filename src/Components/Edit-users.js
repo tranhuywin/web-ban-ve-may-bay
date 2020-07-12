@@ -32,7 +32,7 @@ export class EditUsers extends Component {
                 <td className="align-middle">Diamond</td>
                 <td className="align-middle">999999</td>
                 <td>
-                  <a className="btn btn-primary btn-sm" role="button">
+                  <a className="btn btn-primary btn-sm" role="button" href='#'>
                     Edit User
                   </a>
                   
@@ -46,7 +46,7 @@ export class EditUsers extends Component {
                 <td className="align-middle">Gold</td>
                 <td className="align-middle">300</td>
                 <td>
-                  <a className="btn btn-primary btn-sm" role="button">
+                  <a className="btn btn-primary btn-sm" role="button" href='#'>
                     Edit User
                   </a>
                   <button
@@ -65,7 +65,7 @@ export class EditUsers extends Component {
                 <td className="align-middle">silver</td>
                 <td className="align-middle">200</td>
                 <td>
-                  <a className="btn btn-primary btn-sm" role="button">
+                  <a className="btn btn-primary btn-sm" role="button" href='#'>
                     Edit User
                   </a>
                   <button
@@ -84,7 +84,7 @@ export class EditUsers extends Component {
                 <td className="align-middle">Iron</td>
                 <td className="align-middle">0</td>
                 <td>
-                  <a className="btn btn-primary btn-sm" role="button">
+                  <a className="btn btn-primary btn-sm" role="button" href='#'>
                     Edit User
                   </a>
                   <button

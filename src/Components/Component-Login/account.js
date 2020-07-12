@@ -32,6 +32,13 @@ export class account extends Component {
                     <div className="menu-box-number">200</div>
                   </a>
                 </li>
+                <li>
+                  <a className="menu-box-tab" href="/edit-account">
+                    <span className="icon fas fa-user-edit scnd-font-color" />
+                    Edit my account
+                    <div className="menu-box-number">Go</div>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
