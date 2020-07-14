@@ -1,7 +1,14 @@
 import React, { Component } from "react";
+import $ from "jquery";
 
 export class EditUsers extends Component {
-  
+  componentDidMount() {
+    $("#Button_1").click(function () {
+      $(this).text(function (i, text) {
+        return text === "Save" ? "Edit ticket" : "Save";
+      });
+    });
+  }
   render() {
     return (
       <div className="manage-users-container">
@@ -32,10 +39,9 @@ export class EditUsers extends Component {
                 <td className="align-middle">Diamond</td>
                 <td className="align-middle">999999</td>
                 <td>
-                  <a className="btn btn-primary btn-sm" role="button" href='#'>
+                  <button className="btn btn-primary btn-sm" id="Button_1">
                     Edit User
-                  </a>
-                  
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -46,13 +52,10 @@ export class EditUsers extends Component {
                 <td className="align-middle">Gold</td>
                 <td className="align-middle">300</td>
                 <td>
-                  <a className="btn btn-primary btn-sm" role="button" href='#'>
+                  <a className="btn btn-primary btn-sm" role="button" href="#">
                     Edit User
                   </a>
-                  <button
-                    type="button"
-                    className="btn btn-danger btn-sm"
-                  >
+                  <button type="button" className="btn btn-danger btn-sm">
                     Remove
                   </button>
                 </td>
@@ -65,13 +68,10 @@ export class EditUsers extends Component {
                 <td className="align-middle">silver</td>
                 <td className="align-middle">200</td>
                 <td>
-                  <a className="btn btn-primary btn-sm" role="button" href='#'>
+                  <a className="btn btn-primary btn-sm" role="button" href="#">
                     Edit User
                   </a>
-                  <button
-                    type="button"
-                    className="btn btn-danger btn-sm"
-                  >
+                  <button type="button" className="btn btn-danger btn-sm">
                     Remove
                   </button>
                 </td>
@@ -84,13 +84,10 @@ export class EditUsers extends Component {
                 <td className="align-middle">Iron</td>
                 <td className="align-middle">0</td>
                 <td>
-                  <a className="btn btn-primary btn-sm" role="button" href='#'>
+                  <a className="btn btn-primary btn-sm" role="button" href="#">
                     Edit User
                   </a>
-                  <button
-                    type="button"
-                    className="btn btn-danger btn-sm"
-                  >
+                  <button type="button" className="btn btn-danger btn-sm">
                     Remove
                   </button>
                 </td>
